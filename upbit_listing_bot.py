@@ -16,7 +16,10 @@ API_KEY = os.environ['API_KEY']
 API_SECRET = os.environ['API_SECRET']
 
 client = Client(api_key=API_KEY, api_secret=API_SECRET)
-account_balance = [x  for x in client.get_asset_balance() if float(x['free'])>0]
+try:
+    account_balance = [x  for x in client.get_asset_balance() if float(x['free'])>0]
+except Exception as e:
+    print(e)
 print("✅ Bot started")
 print(account_balance)
 
