@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV TZ=UTC
 
 # 启动脚本
-CMD ["python", "upbit_listing_bot.py"]
+CMD ["python","-u", "upbit_listing_bot.py"]
