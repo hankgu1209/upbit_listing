@@ -16,6 +16,8 @@ API_KEY = os.environ['API_KEY']
 API_SECRET = os.environ['API_SECRET']
 
 client = Client(api_key=API_KEY, api_secret=API_SECRET)
+account_balance = [x  for x in client.get_asset_balance() if float(x['free'])>0]
+print(account_balance[0])
 
 kargs = {
     'order_value': 3000,
