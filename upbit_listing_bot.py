@@ -9,9 +9,11 @@ import math
 from dotenv import load_dotenv
 from decimal import Decimal, ROUND_FLOOR, ROUND_HALF_UP, ROUND_CEILING
 
+
+load_dotenv()  # 从 .env 读取环境变量
 # —— 配置 ——
-API_KEY = os.environ['BINANCE_API_KEY']
-API_SECRET = os.environ['BINANCE_API_SECRET']
+API_KEY = os.environ['API_KEY']
+API_SECRET = os.environ['API_SECRET']
 
 client = Client(api_key=API_KEY, api_secret=API_SECRET)
 
