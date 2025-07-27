@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  upbit_bot:
+    build: .
+    container_name: upbit-bot
+    env_file:
+      - .env
+    restart: always
+    working_dir: /app
+    command: ["python", "-u", "upbit_listing_bot.py"]
